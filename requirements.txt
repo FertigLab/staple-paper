@@ -1,2 +1,4 @@
 anndata
-GEOfetch
+spatialdata_io
+scanpy
+h5py
