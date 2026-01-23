@@ -1,0 +1,1 @@
+wget https://released-taxonomies-802451596237-us-west-2.s3.us-west-2.amazonaws.com/HMBA/BasalGanglia/BICAN_05072025_pre-print_release/Human_HMBA_basalganglia_AIT_pre-print.h5ad -O ./data/Human_HMBA_basalganglia_AIT_pre-print.h5ad
