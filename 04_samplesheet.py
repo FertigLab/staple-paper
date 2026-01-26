@@ -48,6 +48,7 @@ metadata.columns = [col.strip().lower() for col in metadata.columns]
 metadata['region'] = [x.split("_")[-1] for x in metadata['slide']]
 # drop duplicate columns in metadata
 selected_metadata = metadata.groupby('brain').agg({'age':'mean','sex':'first'})
+selected_metadata['age'] = round(selected_metadata['age'],2)
 
 # merge metadata into samplesheet
 samplesheet = samplesheet.merge(selected_metadata, on=['brain'], how='left')
