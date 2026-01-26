@@ -38,8 +38,10 @@ for s in samples:
     }
 
 samplesheet = pd.DataFrame.from_dict(sdict, orient='index')
+samplesheet.insert(0, 'expression_profile', None)
 samplesheet.insert(0, 'data_directory', 'data/GSE307586/samples/'+samplesheet.index)
 samplesheet.insert(0, 'sample', samplesheet.index)
+
 
 # get additional metadata from study github
 metadata_url = "https://raw.githubusercontent.com/LieberInstitute/spatial_NAc/main/raw-data/sample_key_spatial_NAc.csv"
