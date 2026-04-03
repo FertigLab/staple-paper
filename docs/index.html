@@ -127,7 +127,7 @@
       flex-shrink: 0;
     }
 
-    .pdac .dataset-dot  { background: #2e7d9c; }
+    .pdac .dataset-dot  { background: #6c3fa0; }
     .nac  .dataset-dot  { background: #6c3fa0; }
 
     .dataset-header h2 {
@@ -188,6 +188,7 @@
 
     .icon-multiqc  { background: #e0f2f1; }
     .icon-nextflow { background: #ede7f6; }
+    .icon-ai       { background: #fff4db; }
 
     .card-icon svg { width: 18px; height: 18px; }
 
@@ -280,7 +281,7 @@
     <strong>STAPLE</strong> is a <a href="https://www.nextflow.io/" target="_blank" rel="noopener">Nextflow</a>
     bioinformatics pipeline for <strong>10× Visium and Visium HD spatial transcriptomics data</strong> that
     puts the scientific question first. Per-sample spatial features — including cell-type deconvolution,
-    gene-program discovery, and ligand-receptor interaction scoring — are computed and then contrasted
+    cell type spatial composition, and ligand-receptor interaction scoring — are computed and then contrasted
     across samples using metadata from a samplesheet. Results are aggregated into interactive
     <a href="https://multiqc.info/" target="_blank" rel="noopener">MultiQC</a> reports optimised for
     downstream analysis and compatible with LLM-assisted interpretation.
@@ -295,8 +296,8 @@
        target="_blank" rel="noopener">GSE307586</a>
     referenced in the <a href="https://www.biorxiv.org/content/10.1101/2025.09.10.675374v1.full.pdf"
         target="_blank" rel="noopener">companion data paper</a>.
-    Each dataset is represented by a MultiQC analysis report (biological results) and a
-    Nextflow workflow execution report (pipeline performance).
+    Each dataset is represented by a MultiQC analysis report (biological results), a
+    Nextflow workflow execution report (pipeline performance) and AI summaries.
   </p>
 </section>
 
@@ -308,10 +309,11 @@
   <div class="dataset-header">
     <span class="dataset-dot"></span>
     <h2>Pancreatic Ductal Adenocarcinoma (PDAC)</h2>
-    <span class="ds-desc">Validation cohort · 10× Visium</span>
+    <span class="ds-desc">PDAC cohort · 10× Visium HD</span>
   </div>
   <div class="cards">
 
+    <!-- PDAC MultiQC Report -->
     <a class="card" href="1_PDAC_MultiQC.html">
       <div class="card-head">
         <span class="card-icon icon-multiqc">
@@ -328,13 +330,13 @@
         </div>
       </div>
       <p class="card-desc">
-        Interactive MultiQC report summarising cell-type deconvolution, spatial gene-program
-        activity, ligand-receptor interactions, and Moran's I spatial autocorrelation
-        statistics across PDAC tissue sections.
+        Interactive MultiQC report summarising cell-type deconvolution, spatial neighborhood,
+        ligand-receptor interactions, and Moran's I spatial autocorrelation statistics across PDAC tissue sections.
       </p>
       <span class="card-arrow">↗</span>
     </a>
 
+    <!-- PDAC Workflow Report -->
     <a class="card" href="2_PDAC_workflow_report.html">
       <div class="card-head">
         <span class="card-icon icon-nextflow">
@@ -356,6 +358,53 @@
       <span class="card-arrow">↗</span>
     </a>
 
+    <!-- AI summary response resistance-->
+    <a class="card" href="3_PDAC_AI_general.pdf">
+      <div class="card-head">
+        <span class="card-icon icon-ai">
+          <!-- AI spark icon -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="#b26a00" stroke-width="2"
+               stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 3l1.5 3.5L17 8l-3.5 1.5L12 13l-1.5-3.5L7 8l3.5-1.5L12 3z"/>
+            <path d="M5 15l.8 1.8L8 18l-2.2.9L5 21l-.8-2.1L2 18l2.2-1.2L5 15z"/>
+            <path d="M19 13l.8 1.8L22 16l-2.2.9L19 19l-.8-2.1L16 16l2.2-1.2L19 13z"/>
+          </svg>
+        </span>
+        <div>
+          <div class="card-sup">Supplement S3</div>
+          <div class="card-title">PDAC AI Response Resistance</div>
+        </div>
+      </div>
+      <p class="card-desc">
+        AI-generated research on the mechanisms of response resistance for the PDAC STAPLE run.
+      </p>
+      <span class="card-arrow">↗</span>
+    </a>
+
+    <!-- AI summary - perturbation analysis -->
+    <a class="card" href="4_PDAC_AI_perturbation-table.pdf">
+      <div class="card-head">
+        <span class="card-icon icon-ai">
+          <!-- AI spark icon -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="#b26a00" stroke-width="2"
+               stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 3l1.5 3.5L17 8l-3.5 1.5L12 13l-1.5-3.5L7 8l3.5-1.5L12 3z"/>
+            <path d="M5 15l.8 1.8L8 18l-2.2.9L5 21l-.8-2.1L2 18l2.2-1.2L5 15z"/>
+            <path d="M19 13l.8 1.8L22 16l-2.2.9L19 19l-.8-2.1L16 16l2.2-1.2L19 13z"/>
+          </svg>
+        </span>
+        <div>
+          <div class="card-sup">Supplement S4</div>
+          <div class="card-title">PDAC AI Perturbation Analysis</div>
+        </div>
+      </div>
+      <p class="card-desc">
+        AI-generated perturbation agent follow-up research based on the 
+        proposed mechanisms of response resistance.
+      </p>
+      <span class="card-arrow">↗</span>
+    </a>
+
   </div>
 </div>
 
@@ -366,11 +415,11 @@
   <div class="dataset-header">
     <span class="dataset-dot"></span>
     <h2>Nucleus Accumbens (NAc)</h2>
-    <span class="ds-desc">Brain spatial dataset · GSE307586</span>
+    <span class="ds-desc">GSE307586 · 10× Visium SD</span>
   </div>
   <div class="cards">
 
-
+    <!-- NAc MultiQC Report -->
     <a class="card" href="5_NAc_multiqc_report.html">
       <div class="card-head">
         <span class="card-icon icon-multiqc">
@@ -382,20 +431,19 @@
           </svg>
         </span>
         <div>
-          <div class="card-sup">Supplement S1</div>
+          <div class="card-sup">Supplement S5</div>
           <div class="card-title">NAc MultiQC Report</div>
         </div>
       </div>
       <p class="card-desc">
-        Interactive MultiQC report summarising cell-type deconvolution, cell type neighborhoods,
+        Interactive MultiQC report summarising quality control, cell-type deconvolution, cell type neighborhoods,
         ligand-receptor interactions, and Moran's I spatial autocorrelation
         statistics across NAc tissue sections.
       </p>
       <span class="card-arrow">↗</span>
     </a>
 
-
-
+    <!-- NAc Workflow Report -->
     <a class="card" href="6_NAc_workflow_report.html">
       <div class="card-head">
         <span class="card-icon icon-nextflow">
@@ -412,6 +460,28 @@
       <p class="card-desc">
         Nextflow execution report for the NAc STAPLE run: per-process resource usage,
         CPU and memory consumption, task timeline, and pipeline DAG.
+      </p>
+      <span class="card-arrow">↗</span>
+    </a>
+
+    <!-- AI summary -->
+    <a class="card" href="7_NAc_AI_study_vs_MultiQC.pdf">
+      <div class="card-head">
+        <span class="card-icon icon-ai">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#b26a00" stroke-width="2"
+               stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 3l1.5 3.5L17 8l-3.5 1.5L12 13l-1.5-3.5L7 8l3.5-1.5L12 3z"/>
+            <path d="M5 15l.8 1.8L8 18l-2.2.9L5 21l-.8-2.1L2 18l2.2-1.2L5 15z"/>
+            <path d="M19 13l.8 1.8L22 16l-2.2.9L19 19l-.8-2.1L16 16l2.2-1.2L19 13z"/>
+          </svg>
+        </span>
+        <div>
+          <div class="card-sup">Supplement S7</div>
+          <div class="card-title">NAc AI Summary</div>
+        </div>
+      </div>
+      <p class="card-desc">
+        AI-generated summary comparing key findings and insights for the NAc STAPLE run VS original NAc paper.
       </p>
       <span class="card-arrow">↗</span>
     </a>
